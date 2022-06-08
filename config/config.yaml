@@ -1,0 +1,16 @@
+# Project name
+PROJECT: nano
+
+BARCODE_FILE: /Users/xiaokangzhang/github/ONTflow/input/fastq_pass/barcode_index.txt
+DIR_FASTQ: /Users/xiaokangzhang/github/ONTflow/input/fastq_pass
+DIR_OUTPUT: /Users/xiaokangzhang/github/ONTflow/output/output_20220225_smk
+DIR_TRIM: /Users/xiaokangzhang/github/ONTflow/output/output_20220225_smk/trimming_barcode
+GENOME: /Users/xiaokangzhang/github/ONTflow/data/ref/GRCh38.primary_assembly.genome.fa
+ANNOTATE: /Users/xiaokangzhang/github/ONTflow/data/ref/gencode.v38.annotation.gtf
+TRANSCRIPTOME: /Users/xiaokangzhang/github/ONTflow/data/ref/gencode.v38.transcripts.fa
+
+DIR_LONGGF: /cluster/projects/p19/Software/nanogf/bin
+
+TX2GENE: /Users/xiaokangzhang/github/ONTflow/data/ref/tx2gene_gencode.tsv
+ID2SYMBOL: /Users/xiaokangzhang/github/ONTflow/data/ref/id2symbol_gencode.tsv
+
