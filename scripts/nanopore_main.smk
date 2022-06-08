@@ -1,4 +1,4 @@
-configfile: "../config/config_nanopore_main.yaml"
+configfile: "../config/config.yaml"
 
 barcode_file = config["BARCODE_FILE"]
 dir_fastq = config["DIR_FASTQ"]
@@ -14,7 +14,7 @@ id2symbol = config["ID2SYMBOL"]
 with open(barcode_file) as f:
     barcode_indexes = list(barcode.strip() for barcode in f.readlines() if barcode.strip())
 
-rule all:
+rule end:
     input:
         gene_fusions = expand(dir_output + "/gene_fusions/gene_fusions_{barcode_index}.txt", barcode_index = barcode_indexes),
         quant_gene = expand(dir_output + "/gene_abundance/gene_abundance_{barcode_index}.tsv", barcode_index = barcode_indexes)
@@ -43,13 +43,14 @@ rule merge_fastq:
         """
 
 rule index_genome:
-    input: genome
-    output: genome + ".bwt"
+    input: genome = genome
+    output: index_genome = genome + ".bwt"
     shell: "bwa index -a bwtsw {input}"
 
 rule alignment:
     input:
         genome = genome,
+        index_genome = genome + ".bwt",
         fastq_merge = dir_trimmed_fastq + "/{barcode_index}.fastq"
     output:
         sam = dir_output + "/SAM/aln_{barcode_index}.sam"
