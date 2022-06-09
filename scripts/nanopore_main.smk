@@ -3,7 +3,6 @@ configfile: "../config/config.yaml"
 barcode_file = config["BARCODE_FILE"]
 dir_fastq = config["DIR_FASTQ"]
 dir_output = config["DIR_OUTPUT"]
-dir_trimmed_fastq = config["DIR_TRIM"]
 genome = config["GENOME"]
 annot = config["ANNOTATE"]
 trans = config["TRANSCRIPTOME"]
@@ -20,9 +19,9 @@ rule end:
 
 rule trimming:
     input: dir_fastq + "/{barcode_index}"
-    output: directory(dir_trimmed_fastq + "/{barcode_index}/{barcode_index}")
+    output: directory(dir_output+ "/trimming_barcode/{barcode_index}/{barcode_index}")
     params:
-        outpath = dir_trimmed_fastq + "/{barcode_index}"
+        outpath = dir_output+ "/trimming_barcode/{barcode_index}"
     shell:
         """
         guppy_barcoder --input_path {input} --save_path {params.outpath} --trim_barcodes --barcode_kits SQK-PCB109
@@ -30,9 +29,9 @@ rule trimming:
 
 rule merge_fastq:
     input:
-        fastq_dir = dir_trimmed_fastq + "/{barcode_index}/{barcode_index}"
+        fastq_dir = dir_output+ "/trimming_barcode/{barcode_index}/{barcode_index}"
     output:
-        fastq_merge = dir_trimmed_fastq + "/{barcode_index}.fastq"
+        fastq_merge = dir_output+ "/trimming_barcode/{barcode_index}.fastq"
     shell:
         """
         for file in {input.fastq_dir}/*.fastq
@@ -50,7 +49,7 @@ rule alignment:
     input:
         genome = genome,
         index_genome = genome + ".bwt",
-        fastq_merge = dir_trimmed_fastq + "/{barcode_index}.fastq"
+        fastq_merge = dir_output+ "/trimming_barcode/{barcode_index}.fastq"
     output:
         sam = dir_output + "/SAM/aln_{barcode_index}.sam"
     shell:
@@ -82,7 +81,7 @@ rule index_trans:
 rule map2trans:
     input:
         index_trans = trans + ".mmi",
-        fastq_merge = dir_trimmed_fastq + "/{barcode_index}.fastq"
+        fastq_merge = dir_output+ "/trimming_barcode/{barcode_index}.fastq"
     output:
         sam_trans = dir_output + "/SAM_trans/map_{barcode_index}.sam"
     shell:

@@ -60,7 +60,7 @@ Then activate the environment:
 `$ conda activate ontflow`
 
 But Guppy is not open source, and it is only available for ONT customers. For ONT customers, please download and install Guppy manually from the ONT community. And add the installed path to the environment:
-`$ export PATH=/path/to/minimap2:$PATH`
+`$ export PATH=/path/to/guppy:$PATH`
 
 ### For Mac and Windows users
 A Docker image will be provided later.
@@ -84,7 +84,7 @@ barcode10
 barcode11
 barcode12
 ```
-In the case of Genome Biology group OUS, go to `config/config_nanopore_ous_p19.yaml` and modify these 4 parameters accordingly: `BARCODE_FILE`, `DIR_FASTQ`, `DIR_OUTPUT`, and `DIR_TRIM`. And for other users, go to `config/config.yaml` and modify the parameters accordingly.
+In the case of Genome Biology group OUS, go to `config/config_nanopore_ous_p19.yaml` and modify these 3 parameters accordingly: `BARCODE_FILE`, `DIR_FASTQ`, and `DIR_OUTPUT`. And for other users, go to `config/config.yaml` and modify the parameters accordingly.
 
 ## Run the workflow
 ### For TSD users

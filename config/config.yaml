@@ -4,7 +4,7 @@ PROJECT: nano
 BARCODE_FILE: directory_to_ONTflow/input/fastq_pass/barcode_index.txt
 DIR_FASTQ: directory_to_ONTflow/input/fastq_pass
 DIR_OUTPUT: directory_to_ONTflow/output/output_20220225_smk
-DIR_TRIM: directory_to_ONTflow/output/output_20220225_smk/trimming_barcode
+
 GENOME: directory_to_ONTflow/data/ref/GRCh38.primary_assembly.genome.fa
 ANNOTATE: directory_to_ONTflow/data/ref/gencode.v38.annotation.gtf
 TRANSCRIPTOME: directory_to_ONTflow/data/ref/gencode.v38.transcripts.fa
