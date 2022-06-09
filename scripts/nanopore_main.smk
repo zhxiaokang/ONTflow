@@ -6,7 +6,6 @@ dir_output = config["DIR_OUTPUT"]
 dir_trimmed_fastq = config["DIR_TRIM"]
 genome = config["GENOME"]
 annot = config["ANNOTATE"]
-dir_longgf = config["DIR_LONGGF"]
 trans = config["TRANSCRIPTOME"]
 tx2gene = config["TX2GENE"]
 id2symbol = config["ID2SYMBOL"]
@@ -69,10 +68,8 @@ rule gene_fusion:
         annot = annot
     output:
         gene_fusions = dir_output + "/gene_fusions/gene_fusions_{barcode_index}.txt"
-    params:
-        dir_longgf = dir_longgf
     shell:
-        "{params.dir_longgf}/LongGF {input.bam} {input.annot} 60 30 60 0 1 2 > {output.gene_fusions}"
+        "LongGF {input.bam} {input.annot} 60 30 60 0 1 2 > {output.gene_fusions}"
 
 rule index_trans:
     input:

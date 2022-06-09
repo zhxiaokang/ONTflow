@@ -5,12 +5,10 @@ BARCODE_FILE: /cluster/projects/p19/Projects/Nanopore/data/raw_reads/20220225/mi
 DIR_FASTQ: /cluster/projects/p19/Projects/Nanopore/data/raw_reads/20220225/mix/20220225_1207_MC-111018_FAS17046_bf2de48d/fastq_pass
 DIR_OUTPUT: /cluster/projects/p19/Projects/Nanopore/data/output/output_20220225_smk
 DIR_TRIM: /cluster/projects/p19/Projects/Nanopore/data/output/output_20220225_smk/trimming_barcode
+
 GENOME: /cluster/projects/p19/Projects/Nanopore/data/ref/GRCh38.primary_assembly.genome.fa
 ANNOTATE: /cluster/projects/p19/Projects/Nanopore/data/ref/gencode.v38.annotation.gtf
 TRANSCRIPTOME: /cluster/projects/p19/Projects/Nanopore/data/ref/gencode.v38.transcripts.fa
 
-DIR_LONGGF: /cluster/projects/p19/Software/nanogf/bin
-
 TX2GENE: /cluster/projects/p19/Projects/Nanopore/data/ref/tx2gene_gencode.tsv
 ID2SYMBOL: /cluster/projects/p19/Projects/Nanopore/data/ref/id2symbol_gencode.tsv
-

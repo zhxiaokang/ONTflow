@@ -27,9 +27,12 @@ module load samtools/1.8
 module load Salmon/0.12.0-foss-2018b
 module load R/3.5.0
 
+### guppy
 export PATH=/cluster/projects/p19/Software/ont-guppy-cpu/bin:$PATH
 ### minimap2
 export PATH=/cluster/projects/p19/Software/minimap2:$PATH
+### LongGF
+export PATH=/cluster/projects/p19/Software/nanogf/bin:$PATH
 
 # use 12 cores since there are often 12 samples/barcodes from one run, otherwise modify this number accordingly
 snakemake --cores 12 -s nanopore_main.smk
