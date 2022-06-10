@@ -1,17 +1,17 @@
 # Project name
 PROJECT: nano
 
-BARCODE_FILE: directory_to_ONTflow/input/fastq_pass/barcode_index.txt
-SEQ_SUMMARY: directory_to_ONTflow/input/sequencing_summary.txt
-DIR_FASTQ: directory_to_ONTflow/input/fastq_pass
-DIR_OUTPUT: directory_to_ONTflow/output/output_20220225_smk
+BARCODE_FILE: ../input/fastq_pass/barcode_index.txt
+SEQ_SUMMARY: ../input/sequencing_summary.txt
+DIR_FASTQ: ../input/fastq_pass
+DIR_OUTPUT: ../output/output_20220225_smk
 
-GENOME: directory_to_ONTflow/data/ref/GRCh38.primary_assembly.genome.fa
-ANNOTATE: directory_to_ONTflow/data/ref/gencode.v38.annotation.gtf
-TRANSCRIPTOME: directory_to_ONTflow/data/ref/gencode.v38.transcripts.fa
+GENOME: ../data/ref/GRCh38.primary_assembly.genome.fa
+ANNOTATE: ../data/ref/gencode.v38.annotation.gtf
+TRANSCRIPTOME: ../data/ref/gencode.v38.transcripts.fa
 
 DIR_LONGGF: /cluster/projects/p19/Software/nanogf/bin
 
-TX2GENE: directory_to_ONTflow/data/ref/tx2gene_gencode.tsv
-ID2SYMBOL: directory_to_ONTflow/data/ref/id2symbol_gencode.tsv
+TX2GENE: ../data/ref/tx2gene_gencode.tsv
+ID2SYMBOL: ../data/ref/id2symbol_gencode.tsv
 

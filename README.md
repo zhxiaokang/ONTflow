@@ -20,8 +20,10 @@ With `Graphviz` installed, the workflow can be visualized by
 ## Installation
 
 ### For TSD users
+#### Most tools are ready on TSD
 Most tools are either already available on TSD and can be loaded directly, or already installed at a shared directory, as can be seen in the 	SLURM workscript file at `./scripts/workscript_nanopore_main_smk.slurm`.
 
+#### Install three R packages
 But the R packages need to be installed by each user, since they can only be installed at personal folder as required by TSD.
 
 Firstly, load the specific R with `module load R/3.5.0`, and then get into R by command `R`. Then install the packages inside there:
@@ -36,6 +38,16 @@ Then you can install "stringr" normally:
 
 `install.package('stringr')`
 
+#### Install one Python package
+Another tool that needs to be installed manually (also by each user) is pycoQC which is the tool to do quality control of the sequencing.
+
+Firstly, load the specific Python with `module load python.gnu/3.7.3`, and then install pycoQC with:
+
+`pip3 install --user pycoQC`
+
+The software will automatically be installed to your own local directiry `~/.local/bin`. That's why you see this line in workscript:
+`export PATH=~/.local/bin:$PATH`
+so that SLURM knows where to find pycoQC.
 
 ### For Linux users
 #### Install Miniconda
