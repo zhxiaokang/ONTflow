@@ -27,6 +27,8 @@ module load samtools/1.8
 module load Salmon/0.12.0-foss-2018b
 module load R/3.5.0
 
+### pycoQC
+export PATH=~/.local/bin:$PATH
 ### guppy
 export PATH=/cluster/projects/p19/Software/ont-guppy-cpu/bin:$PATH
 ### minimap2

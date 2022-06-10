@@ -1,6 +1,7 @@
 configfile: "../config/config.yaml"
 
 barcode_file = config["BARCODE_FILE"]
+seq_summary = config["SEQ_SUMMARY"]
 dir_fastq = config["DIR_FASTQ"]
 dir_output = config["DIR_OUTPUT"]
 genome = config["GENOME"]
@@ -14,8 +15,17 @@ with open(barcode_file) as f:
 
 rule end:
     input:
+        qc_report = dir_output + "/qc_sequence_report.html",
         gene_fusions = expand(dir_output + "/gene_fusions/gene_fusions_{barcode_index}.txt", barcode_index = barcode_indexes),
         quant_gene = expand(dir_output + "/gene_abundance/gene_abundance_{barcode_index}.tsv", barcode_index = barcode_indexes)
+
+rule QC_sequence:
+    input:
+        seq_summary = seq_summary
+    output:
+        qc_report = dir_output + "/qc_sequence_report.html"
+    shell:
+        "pycoQC -f {input.seq_summary} -o {output.qc_report}"
 
 rule trimming:
     input: dir_fastq + "/{barcode_index}"

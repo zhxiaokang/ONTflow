@@ -2,6 +2,7 @@
 PROJECT: nano
 
 BARCODE_FILE: directory_to_ONTflow/input/fastq_pass/barcode_index.txt
+SEQ_SUMMARY: directory_to_ONTflow/input/sequencing_summary.txt
 DIR_FASTQ: directory_to_ONTflow/input/fastq_pass
 DIR_OUTPUT: directory_to_ONTflow/output/output_20220225_smk
 

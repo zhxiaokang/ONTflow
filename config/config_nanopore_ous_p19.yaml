@@ -2,6 +2,7 @@
 PROJECT: Nanopore
 
 BARCODE_FILE: /cluster/projects/p19/Projects/Nanopore/data/raw_reads/20220225/mix/20220225_1207_MC-111018_FAS17046_bf2de48d/fastq_pass/barcode_index.txt
+SEQ_SUMMARY: /cluster/projects/p19/Projects/Nanopore/data/raw_reads/20220225/mix/20220225_1207_MC-111018_FAS17046_bf2de48d/sequencing_summary_FAS17046_3af37363.txt
 DIR_FASTQ: /cluster/projects/p19/Projects/Nanopore/data/raw_reads/20220225/mix/20220225_1207_MC-111018_FAS17046_bf2de48d/fastq_pass
 DIR_OUTPUT: /cluster/projects/p19/Projects/Nanopore/data/output/output_20220225_smk
 
