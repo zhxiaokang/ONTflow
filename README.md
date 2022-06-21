@@ -41,7 +41,7 @@ Then you can install "stringr" normally:
 #### Install one Python package
 Another tool that needs to be installed manually (also by each user) is pycoQC which is the tool to do quality control of the sequencing.
 
-Firstly, load the specific Python with `module load python.gnu/3.7.3`, and then install pycoQC with:
+Firstly, load the specific Python with `module load python3.gnu/3.7.3`, and then install pycoQC with:
 
 `pip3 install --user pycoQC`
 
