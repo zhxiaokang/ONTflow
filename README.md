@@ -28,15 +28,15 @@ But the R packages need to be installed by each user, since they can only be ins
 
 Firstly, load the specific R with `module load R/3.5.0`, and then get into R by command `R`. Then install the packages inside there:
 
-`install.package('hash')`
+`install.packages('hash')`
 
-`install.package('tximport')`
+`install.packages('tximport')`
 
 But it's a bit tricky to install "stringr" which requires dependency "stringi". You have to install "stringi" with `install.packages("/tsd/shared/R/misc/stringi_1.4.6.tar.gz", repos = NULL, type = "source")` (more information here: [https://www.uio.no/english/services/it/research/sensitive-data/help/software/r/using-R.html#toc6](https://www.uio.no/english/services/it/research/sensitive-data/help/software/r/using-R.html#toc6)
 
 Then you can install "stringr" normally:
 
-`install.package('stringr')`
+`install.packages('stringr')`
 
 #### Install one Python package
 Another tool that needs to be installed manually (also by each user) is pycoQC which is the tool to do quality control of the sequencing.
