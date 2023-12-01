@@ -10,8 +10,8 @@ trans = config["TRANSCRIPTOME"]
 tx2gene = config["TX2GENE"]
 id2symbol = config["ID2SYMBOL"]
 
-with open(barcode_file) as f:
-    barcode_indexes = list(barcode.strip() for barcode in f.readlines() if barcode.strip())
+with open(barcode_file) as fp:
+    barcode_indexes = list(barcode.strip() for barcode in fp.readlines() if barcode.strip())
 
 rule end:
     input:
