@@ -29,7 +29,7 @@ rule QC_sequence:
 
 rule trimming:
     input: dir_fastq + "/{barcode_index}"
-    output: directory(dir_output+ "/trimming_barcode/{barcode_index}/{barcode_index}")
+    output: dir_output+ "/trimming_barcode/{barcode_index}/{barcode_index}"
     params:
         outpath = dir_output+ "/trimming_barcode/{barcode_index}"
     shell:
@@ -108,7 +108,7 @@ rule quantify_trans:
         trans = trans,
         bam_trans = dir_output + "/BAM_trans/map_{barcode_index}.bam"
     output:
-        quant_salmon = directory(dir_output + "/quantification/salmon_{barcode_index}")
+        quant_salmon = dir_output + "/quantification/salmon_{barcode_index}"
     shell:
         "salmon quant --noErrorModel -p 12 -t {input.trans} -l A -a {input.bam_trans} -o {output.quant_salmon} --writeUnmappedNames"
 

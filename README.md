@@ -105,3 +105,5 @@ Go to the directory `script/` and run `sh runscript_nanopore_main_smk.sh` from t
 ### For other users
 Go to the directory `script/` and run `snakemake --cores 12 -s nanopore_main.smk` from there.
 
+### Known issues
+`snakemake` may report some errors due to its own version conflict, eg. the version 3.13.3 does not need the label `directory` at `output`.
